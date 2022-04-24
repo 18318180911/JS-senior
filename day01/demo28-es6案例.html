@@ -17,20 +17,15 @@
   </head>
   <body>
     <script>  
-
     /* 
     使用es6的class 实现以下功能
-
     1 父类 Element 
       1 属性 this.dom
       2 方法 append
-    
     2 定义两个子类 都要继承父亲的属性和方法
       1 ElementDouble
       2 ElementSingle 
-
     3 然后 通过编写代码 把以下程序运行起来
-      
      */
     class Element {
         constructor(tagName) {
@@ -53,13 +48,10 @@
             this.dom.src = src;
         }
     }
- 
       const divModel = new ElementDouble('div', '这个是div');
       divModel.append('body');
-
       const imgModel = new ElementSingle('img', './images/1.png');
       imgModel.append('div');
-
     </script>
   </body>
 </html>
