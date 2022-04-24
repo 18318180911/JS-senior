@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 工厂函数：优点：容易维护；弊端：无法实现继承的作用
+        function createPerson(name, age, height) {
+            return {
+                name: name,
+                age: age,
+                height: height,
+            };
+        }
+        // 创建对象
+        const obj1 = createPerson('悟空1', 18, 150);
+        const obj2 = createPerson('悟空2', 28, 151);
+        const obj3 = createPerson('悟空3', 38, 152);
+        console.log(obj1);
+        console.log(obj2);
+        console.log(obj3);
+    </script>
+</body>
+</html>

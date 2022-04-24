@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        const lis = document.querySelectorAll('li');
+        // const liList = domToArr(lis);
+        // console.log(liList.every);
+        // 转换成真正的数组
+        // const liList = [].concat(lis);
+        // liList = [lis伪数组]
+        // liList[0] = lis伪数组
+        // 伪类数组调用every
+        liList[0].every === lis.every
+        console.log(liList[0].every);
+        // const liList = [...伪数组]
+        const liList=[...lis]
+    </script>
+</body>
+</html>

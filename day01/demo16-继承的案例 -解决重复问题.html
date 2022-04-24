@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.父亲 Element
+        function Element(tagName) {
+            const dom = document.createElement(tagName);
+            // 属性dom-> this.dom
+            this.dom = dom;
+        }
+        // 行为 append
+        Element.prototype.append = function(parentSelector) {
+            document.querySelector(parentSelector).appendChild(this.dom);
+        }
+        //2.儿子1 ElementDouble div
+        function ElementDouble(tagName, content) {
+            // 2.1继承父亲Element: 属性 dom,
+            Element.call(this, tagName)
+            this.dom.innerText = content;
+        }
+        // 2.1继承父亲Element: 行为append
+        ElementDouble.prototype.append = Element.prototype.append
+        //3.儿子2 ElementSingle img
+        function ElementSingle(tagName, src) {
+            // 3.1继承父亲Element: 属性 dom,
+            Element.call(this, tagName)
+            this.dom.src = src;
+        }
+        // 3.1继承父亲Element: 行为append
+        ElementSingle.prototype.append = Element.prototype.append
+        //4.执行已下代码，出现对应效果
+        // 4.1 const divModel = new ElementDouble("div", "div内容的文字");
+        // 4.2 divModel.append("body");//body标签可以出现一个div
+        const divModel = new ElementDouble("div", "div内容的文字");
+        divModel.append("body");
+        // 4.3 const imgModel = new ElementSingle("img", "图片地址")
+        const imgModel = new ElementSingle("img", "./images/1.png")
+        // 4.4 imgModel.append("body"); //body标签可以出现一个图片
+        imgModel.append("body");
+    </script>
+</body>
+</html>

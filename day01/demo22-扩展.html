@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 扩展...用法
+        const obj = {
+            username: '悟空',
+            height: 200,
+        };
+        // 给newobj开辟新的内存空间
+        // const newObj = {...obj};
+        // 添加新的属性
+        const newObj = {...obj, color: 'yellow'};
+        // 修改
+        newObj.username = '八戒';
+        newObj.weight = 100;
+        console.log(obj);
+        console.log(newObj);
+
+        // 扩展运算符，对数组操作
+        const arr = ['a', 'b', 'c']
+        // 在后面新增一个元素
+        const newArr = [...arr, 'd']
+        // 在前面新增一个元素
+        // const newArr = ['w', ...arr]
+        // 中间无法使用剩余运算符来实现，想要实现使用splice()
+    </script>
+</body>
+</html>

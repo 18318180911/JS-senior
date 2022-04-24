@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        function MyImg(src) {
+            const img = document.createElement('img');
+            img.src = src;
+            this.dom = img
+        }
+        MyImg.prototype.append = function (parentSelector) {
+            // document.body 父元素
+            // 父元素.appendChild(子元素);  // img 创建的元素
+            document.querySelector(parentSelector).appendChild(this.dom);
+        };
+        // 先创建一个图片标签
+        const imgModel = new MyImg('./images/1.png');
+        // 指定位置来插入元素
+        imgModel.append('li:nth-child(3)'); // 图片插入到指定的父元素中
+    </script>
+</body>
+</html>

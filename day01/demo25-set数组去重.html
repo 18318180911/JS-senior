@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no"
+    />
+    <title>02-set去重案例</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" />
+    <ul></ul>
+    <script>
+        const input = document.querySelector('input');
+        const ul = document.querySelector('ul');
+        let arr = ['a', 'b', 1];
+        render();
+        input.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                // 去重处理
+                //利用set对象，把数组转对象
+                const set = new Set(arr);
+                // 添加值，已有的不会重复
+                set.add(this.value)
+                // 把对象转为数组
+                arr = [...set];
+                //   arr.push(this.value);
+                // 重新调用数组
+                render();
+            }
+        });
+
+        function render() {
+            const html = arr.map((value) => `<li>${value}</li>`).join('');
+            ul.innerHTML = html;
+        }
+    </script>
+  </body>
+</html>

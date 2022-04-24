@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        select {
+            border: 50%;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+    </style> -->
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        function MyImg(src) {
+            const img = document.createElement('img');
+            img.src = src;
+            document.body.appendChild(img);
+            this.dom = img;
+            //首先需要返回，img.style
+            return img.style;
+        }
+        MyImg.prototype.borderRadius = function (border) {
+            this.dom.style.borderRadius = border;
+        };
+        const button=document.querySelector("button");
+        const imgModel1 = MyImg('./images/4.png');
+        button.addEventListener("click",function () {
+            console.log(imgModel1)
+            //不是borderRadius("50%")而是以下这样
+            imgModel1.borderRadius = "50%";
+        })
+    </script>
+</body>
+</html>

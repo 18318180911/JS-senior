@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">c
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 把createPerson叫做构造函数
+        // 把createPerson 创建出来的对象叫做实例：obj1
+        // 生明一个函数
+        function createPerson(name, age) {
+            // 给this赋值：相当于给内存当中创建的变量赋值
+            this.name = name;
+            this.age = age;
+            // 需要写死的数据就不应传参
+            this.color = 'red';
+        }
+        // 2.通过new的方式来创建对象
+        const obj1 = new createPerson('悟空', 10);
+        console.log(obj1);
+        console.log(obj1.name);
+        console.log(obj1.age);
+    </script>
+</body>
+</html>

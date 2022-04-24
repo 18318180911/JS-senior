@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let imgArr = ['./images/1.png','./images/2.png','./images/4.png']
+        function MyImg(src) {
+            const img = document.createElement('img');
+            img.src = src;
+            document.body.appendChild(img);
+            this.dom = img;
+            //返回创建的图片对象
+            return img;
+        }
+        MyImg.prototype.borderRadius = function (border) {
+            this.dom.style.borderRadius = border;
+        };
+        //遍历imgArr,分别创建img对象，并对创建的img对象添加事件
+        for (let index = 0; index < imgArr.length; index++) {
+            const imgModel1 = MyImg(imgArr[index]);
+            imgModel1.addEventListener("click",() => {
+                // 图片边框为圆角
+                imgModel1.style.borderRadius = "50%";
+            })
+        }
+        
+    </script>
+</body>
+</html>

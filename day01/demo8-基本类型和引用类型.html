@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对于基本类型来说，=  就是复制了一份值
+        let num=100;
+        let num2=num;// 复制值  num和 num2占两给内存 各自不影响
+        num2=1000;
+        console.log(num);
+        // 对于引用类似 =  其实把地址拷贝了一份给新的对象  两个数据 公用一份数据
+        let person1 = { name: '悟空' }; // person1 指向了 一个地址 0x1111 存放悟空
+        let person2 = person1; // person2也指向了person1的地址 0x1111  person1和person2 通用一个数据
+        // 修改了person2 person1也会发生改变
+        person2.name = '八戒';
+        console.log(person1);
+        // person2 和person1 共同指向了同一个地址
+        console.log(person1 === person2); // true
+        // let o={};// 开辟了一个内存
+        // let o2={};// 开辟了另外一个内存
+        // console.log(o===o2);// false 两个不同的内存地址
+    </script>
+</body>
+</html>

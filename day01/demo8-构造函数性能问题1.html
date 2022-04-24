@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function say() {
+            console.log('这个是say方法');
+        }
+        // 构造函数的首字母大写  -  行内编码规范
+        function CreatePerson(name) {
+            this.name = name; // 创建了name属性
+            // this.say = function () {
+            //   console.log('这个是say方法');
+            // };
+            this.say = say; // say函数引用类型， 构造函数中的say 其实和外面的say内存地址一致的  同一个say方法
+        }
+        const obj1 = new CreatePerson('悟空');
+        const obj2 = new CreatePerson('八戒');
+        // obj1.say();
+        // obj2.say();
+        // 两个say的判断比较 是false 说明 两个say是在不同的内存空间上
+        // 两个say 占用了两个内存空间
+        // console.log(obj1.say === obj2.say); // false
+        console.log(obj1.say === obj2.say); // true
+    </script>
+</body>
+</html>

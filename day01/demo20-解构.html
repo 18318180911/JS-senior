@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 数组解构
+        // const arr = ['悟空', '八戒', '龙马','沙僧'];
+        // const [a, b, c, d] = arr;
+        // const [a, b, c, d] = ['悟空', '八戒', '龙马','沙僧'];
+        // console.log(a, b, c, d);
+        // 对象的解构
+        // const obj = {
+        //     username: '悟空',
+        //     height: 100,
+        // };
+        // const{username, height = 200} = obj;
+        // console.log(username, height);
+        // 解构 + 默认值
+        // const arr = [1];
+        // const [a, b] = arr;
+        // console.log(a,b); // a = 1, b = undefined
+        // const arr = [1, 100];
+        // const [a, b = 2] =arr;
+        // console.log(a,b); // a = 1, b =100
+        // 对象 + 默认值
+        const obj ={
+            username: 100,
+            height: 500,
+        };
+        const {username, height = 200} = obj;
+        console.log(username, height);
+    </script>
+</body>
+</html>

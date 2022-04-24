@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数 创建不同人 大家有大家的名字， 共同一个行为 say => 说出自己的名称
+        function CreatePerson(name,height) {
+            this.name = name;
+            this.height=height;
+            // this.say = function () {
+            //   // console.log(name);
+            //   console.log(this.name);
+            // };
+        }
+        CreatePerson.prototype.say=function(){
+            // this 指向了实例
+            // 通过this 实现了 数据传递 =访问到另外一个函数（构造函数）中的数据
+            console.log(this.name,this.height); // 出错 
+        }
+        const obj1 = new CreatePerson('八戒',100);
+        const obj2 = new CreatePerson('悟空',150);
+        obj1.say();
+        obj2.say();
+    </script>
+</body>
+</html>

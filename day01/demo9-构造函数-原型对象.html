@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function CreatePerson(name) {
+            this.name = name;
+        }
+        // 原型对象
+        // console.log(CreatePerson.prototype);
+        // 在DNA上新增 东西
+        CreatePerson.prototype.say = function () {
+            console.log('你好');
+        };
+        const obj1 = new CreatePerson('悟空');
+        const obj2 = new CreatePerson('八戒');
+        // obj1.say();
+        // obj2.say();
+        function CreateStudent() {}
+        CreateStudent.prototype.say = function () {
+            console.log('学生你好');
+        };
+        // console.log(obj1.say === obj2.say);// 没有性能问题
+    </script>
+</body>
+</html>

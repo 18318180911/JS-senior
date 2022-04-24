@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            name: '大耳朵图图',
+            skill() {
+                console.log(this.name + '干饭')
+            },
+        };
+        const person = {
+            name: '小头爸爸',
+        };
+        obj.skill.call(person);
+        obj.skill.apply(person);
+        // bind不会直接调用函数,而是返回一个新的函数,需要外卖主动的调用新的函数
+        const func = obj.skill.bind(person);
+        func();
+    </script>
+</body>
+</html>

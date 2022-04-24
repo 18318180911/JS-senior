@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //set 对象主要的功能是去重处理
+        const beforeArr = ['a', 'b', '3', '4'];
+        // 数组转对象
+        const set = new Set(beforeArr);
+        // 添加
+        set.add(1);
+        set.add(2);
+        set.add(2);
+        console.log(set);
+        // set对象转为数组
+        const arr = [...set];
+        console.log(arr);
+    </script>
+</body>
+</html>

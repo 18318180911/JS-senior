@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        map()
+        function map() {
+            // map根据原来的数组，来返回新的数组；也会循环数组在循环的回调函数中可以返回新的数据，组装成新的数组
+            const arr = ['a', 'b', 'c']
+            // 可以返回["我是a","我是b","我是c"];
+            const newArr = arr.map((value) => '我是' + value)
+            console.log(newArr);
+            const list = [10,11,12];
+            // const newList = list.map(value=>1) // ['1', '1','1']
+            // const newList = list.map(value=>value+1)
+            console.log(newList);
+
+            // const texts = ['大耳朵图图', '懒洋洋', '灰太狼'];
+            // const newTexts = texts.map(value => `<div>${value}</div>`);
+            // const html = newTexts.join("");
+            // document.body.innerHTML = html;
+
+        }
+    </script>
+</body>
+</html>

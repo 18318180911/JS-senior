@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 获取剩下的对象
+        // const {a, ...c} = {a: 1, b: 2, c: 3};
+        // console.log(c); // {b:2,c:3}
+        const {a, b,c,...d} = {a:1, b: 2, c:3};
+        console.log(d); // 空对象{}
+
+
+        // 实现原理： 利用剩余运算符会把多余的参数放到数组里边，然后被数组遍历，然后拿变量sum加等于拼接
+        // 计算数据和功能
+        function calc(...args) {
+            let sum = 0;
+            args.forEach(value=>sum+=value);
+            console.log(sum);
+        }
+        calc(1,2); //3
+        calc(2,3,5); // 10
+    </script>
+</body>
+</html>

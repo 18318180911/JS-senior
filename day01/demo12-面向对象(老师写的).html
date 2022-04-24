@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 const imgModel=new MyImg("图片地址")  页面上多一张图片
+        // 2 点击哪张图片，让哪张图片 变成边框圆角 50%
+        // 构造函数
+        function MyImg(src) {
+            const img = document.createElement('img');
+            img.src = src;
+            // 过渡
+            img.style.transition = "1s";
+            document.body.appendChild(img)
+            this.dom = img;
+            // 绑定点击事件
+            img.addEventListener('click', function () {
+                img.style.borderRadius = '50%';
+            });
+        }
+        const imgModel1 = new MyImg('./images/1.png');
+        const imgModel2 = new MyImg('./images/2.png');
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 封装
+        //  父亲
+        function Element(tagName) {
+            const dom = document.createElement(tagName);
+            this.dom = dom;
+        }
+        //  父亲
+        Element.prototype.append = function (parentSelector) {
+            document.querySelector(parentSelector).appendChild(this.dom);
+        };
+
+        // 儿子1
+        function ElementDouble(tagName, content) {
+            Element.call(this, tagName); // 继承 - 父亲的属性
+            this.dom.innerText = content;
+        }
+        // 去继承父亲的行为
+        ElementDouble.prototype.append = Element.prototype.append;
+
+        // 儿子2
+        function ElementSingle(tagName, src) {
+            Element.call(this, tagName);
+            this.dom.src = src;
+        }
+        ElementSingle.prototype.append = Element.prototype.append;
+
+        const divModel = new ElementDouble('div', '这个是div');
+        divModel.append('body');
+
+        const imgModel = new ElementSingle('img', './images/b_01.jpg');
+        imgModel.append('div');
+    </script>
+</body>
+</html>

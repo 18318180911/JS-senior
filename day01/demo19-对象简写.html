@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量名和属性名一致，对象可以简写
+        // 对象简写
+         const username = 123;
+         const color = 'red';
+         const  say = function () {};
+         function show() {};
+         const obj = {
+             username,
+             color,
+             say,
+             show,
+             height: 100,
+         };
+         // 修改
+         obj.height = 200;
+         console.log(obj);
+          // 对象方法的简写
+        const person = {
+            show:function() {
+                console.log('show');
+            },
+            say() {
+                console.log('say');
+            }
+        }
+        person.show();
+        person.say();
+    </script>
+</body>
+</html>

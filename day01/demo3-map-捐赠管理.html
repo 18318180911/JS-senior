@@ -1,0 +1,131 @@
+<!-- 
+  1 快速实现静态布局
+  2 使用提供好的数组数据 来遍历 渲染页面
+ -->
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no"
+    />
+    <title>01-捐赠管理.html</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h3 {
+        margin: 50px;
+        text-align: center;
+      }
+      table {
+        width: 800px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        text-align: center;
+      }
+      thead {
+        background-color: #337ab7;
+        color: #fff;
+      }
+      td,
+      th {
+        padding: 10px 50px;
+        /* 设置文字不换行 */
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>捐赠管理</h3>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>捐赠人</th>
+          <th>收捐单位</th>
+          <th>金额</th>
+          <th>收捐日期</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      // 获取tbody
+      const tbody = document.querySelector('tbody');
+      // 定义数据
+      const arr = [
+        // id:数据编号  person:捐赠人姓名   unit:捐赠单位名称  money:捐赠金额  date:捐赠日期
+        {
+          id: 1,
+          person: '刘德化',
+          unit: '壹基金',
+          money: 1000,
+          date: '2021-10-5',
+        },
+        {
+          id: 2,
+          person: '周杰伦',
+          unit: '自然之友',
+          money: 1000,
+          date: '2021-01-15',
+        },
+        {
+          id: 3,
+          person: '李连杰',
+          unit: '嫣然基金',
+          money: 1000,
+          date: '2021-06-7',
+        },
+      ];
+
+      // 根据数组来渲染页面
+      // function render() {
+      //   const newArr = arr.map(
+        //     <tr>
+        //        <td>${value.id}</td>
+        //        <td>${value.person}</td>
+        //        <td>${value.unit}</td>
+        //        <td>${value.money}</td>
+        //        <td>${value.date}</td>
+        //        <td>
+        //  <a href="#" class="del">删</a>
+        //  <a href="#" class="update">改</a>
+        //          </td>
+        //      </tr>
+      //   //     `);
+      //   //   
+
+      //   // 只能使用 map方法 和 数组转方式方法 join 来实现 拼接html的功能
+      //   // 把 arr  转成（map、join 来实现功能） 变量 html 让下面的代码 （tbody.innerHTML = html;） 执行成功
+
+      //   tbody.innerHTML = html;
+      // }
+      // render()
+     function map() {
+      const newArr = arr.map((value, index) => `<tr>
+                                                  <td>${arr[index].id}</td>
+                                                  <td>${arr[index].person}</td>
+                                                  <td>${arr[index].unit}</td>
+                                                  <td>${arr[index].money}</td>
+                                                  <td>${arr[index].date}</td>
+                                                  <td>
+                                                  <a href="#" class="del">删</a>
+                                                  <a href="#" class="update">改</a>
+                                                          </td>
+                                                      </tr>`)
+                                                      const html = newArr.join("");
+                                                      tbody.innerHTML = html;
+                                              }
+
+      // 根据数组数组渲染页面
+      map();
+    </script>
+  </body>
+</html>

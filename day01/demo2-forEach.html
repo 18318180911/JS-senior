@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // forEach() 数组每一个元素都执行一次回调函数
+        // for循环可以通过break来打断，forEach不能
+        const arr = ['a', 'b', 'c'];
+        // arr.forEach(function(value, index) {
+        //     console.log(`值${value},下标${index}`)
+        // })
+        // arr.forEach((value, index) => {
+        //     console.log(`值${value},下标${index}`)
+        // });
+        arr.forEach((value, index) => console.log(`值${value},下标${index}`))
+        arr.forEach(value => console.log(`值${value}`))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        function func1(num1) {
+            return num1 + 100;
+        }
+        // 定义箭头函数,没有形参，返回值
+        const func2 = () => {
+            console.log('a');
+            console.log('b')
+        }
+        // 没有形参，没有返回值，业务只有一行代码，大括号都可以省略
+        const func3 = () => console.log('c');
+        // 只有一个形参，没有返回值，业务只有一行代码
+        const func4 = num => console.log(num + 1)
+        // func5等价于func4
+        const func5 = (num) => console.log(num + 1)
+        // 两个或者多个参数(括号不能省略)，没有返回值，业务只有一条语句
+        const func6 = (a,b) => console.log(a + b);
+        // 没有形参，又有返回值，业务两行代码
+        const func7 = () => {
+            let a = 100;
+            return a + 100;
+        }
+        // 没有形参，有返回值，业务一行代码
+        const func8 = () => {
+            return 100 + 200
+        }
+        // func9等价于func8
+        const func9 = () => 100 + 200
+        const buttom = document.querySelector('button');
+        buttom.addEventListener('click', () => {
+            console.log(123);
+        })
+        // 返回对象类型
+        const func10 = (num) => ({a:123});
+        const func11 = (num) => {a: 123};
+        console.log(func10()); // {a:123}
+        console.log(func11()); // undefined
+    </script>
+</body>
+</html>

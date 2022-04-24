@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        every();
+      function every() {
+        // 会返回 true或者false
+        // 如果数组中每一个元素都复合条件，every返回true
+        const arr = [1, 2, 3, 4];
+        // 判断数组中每一个元素，是不是都小于 5 如果是  返回true
+        // every当中的函数，要求每一个都return 了true 最后 every的返回值才是true
+        const result = arr.every((value) => {
+          if (value < 5) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+        console.log(result);
+        // every 如果是空数组，调用every 直接返回true
+        let arr1=[];
+            const result1=arr1.every(value=>console.log(12));// result = true
+            console.log(result1);
+      }
+    </script>
+</body>
+</html>
